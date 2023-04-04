@@ -23,6 +23,8 @@ namespace _Project.Scripts.Systems.Player
         private CinemachineTransposer _transposer;
         private KiCoroutine _lerpOffsetRoutine;
 
+        private Vector3 _followOffset;
+
         public ScaleType ScaleType { get; private set; }
 
         private void Awake()
@@ -30,7 +32,7 @@ namespace _Project.Scripts.Systems.Player
             _transposer = _virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
 
             _lerpOffsetRoutine = new KiCoroutine();
-            
+
             ScaleType = _defaultZoom;
             SetScale(ScaleType);
         }
@@ -50,6 +52,7 @@ namespace _Project.Scripts.Systems.Player
 
         private void SetScale(ScaleType scaleType)
         {
+            _followOffset = _transposer.m_FollowOffset;
             switch (scaleType)
             {
                 case ScaleType.SuperDecrease:
@@ -77,8 +80,7 @@ namespace _Project.Scripts.Systems.Player
             _lerpOffsetRoutine.StopRoutine();
 
             _lerpOffsetRoutine.StartRoutineLoop(
-                time => _transposer.m_FollowOffset = Vector3.Lerp(_transposer.m_FollowOffset, target, time),
-                0F,
+                time => _transposer.m_FollowOffset = Vector3.Lerp(_followOffset, target, time),
                 _duration
             );
         }

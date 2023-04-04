@@ -3,7 +3,10 @@ using UnityEngine;
 
 namespace _Project.Scripts.Systems.Player
 {
-    [RequireComponent(typeof(PlayerMovement), typeof(PlayerScaling), typeof(PlayerRotate))]
+    [RequireComponent(
+        typeof(PlayerMovement), 
+        typeof(PlayerScaling), 
+        typeof(PlayerRotate))]
     public class PlayerInput : MonoBehaviour
     {
         private Input _input;
@@ -20,10 +23,10 @@ namespace _Project.Scripts.Systems.Player
             _rotate = GetComponent<PlayerRotate>();
             _input = new Input();
 
-            _input.Scaling.Zoom.performed += ctx => OnScalingKeyboard(1);
-            _input.Scaling.Decrease.performed += ctx => OnScalingKeyboard(-1);
-            _input.Rotation.ResetHorizontalRotation.performed += ctx => OnResetRotation(AxisMode.Horizontal);
-            _input.Rotation.ResetVerticalRotation.performed += ctx => OnResetRotation(AxisMode.Vertical);
+            _input.Scaling.Zoom.performed += ctx => _scaling.ChangeScale(1);
+            _input.Scaling.Decrease.performed += ctx => _scaling.ChangeScale(-1);
+            _input.Rotation.ResetHorizontalRotation.performed += ctx => _rotate.SetDefault(AxisMode.Horizontal);
+            _input.Rotation.ResetVerticalRotation.performed += ctx => _rotate.SetDefault(AxisMode.Vertical);
         }
 
         private void OnEnable()
@@ -38,41 +41,35 @@ namespace _Project.Scripts.Systems.Player
 
         private void Update()
         {
+            // scaling
             int scrollDirection = Mathf.RoundToInt(_input.Scaling.Scroll.ReadValue<float>());
             if (scrollDirection != 0)
             {
                 _scaling.ChangeScale(scrollDirection);
             }
-         
+
+            // movement
             Vector2 moveDirection = _input.Move.Movement.ReadValue<Vector2>();
             _movement.SetDirection(moveDirection);
             _movement.SetSpeed((int)_scaling.ScaleType);
 
-            int turnHorizontalDirection = Mathf.RoundToInt(_input.Rotation.HorizontalTurn.ReadValue<float>());
-            if (turnHorizontalDirection != 0)
+            Vector2Int rotateDirection = Vector2Int.RoundToInt(
+                new Vector2(
+                    _input.Rotation.HorizontalTurn.ReadValue<float>(),
+                    _input.Rotation.VerticalTurn.ReadValue<float>()
+                ).normalized);
+
+            //  horizontal rotate
+            if (rotateDirection.x != 0)
             {
-                _rotate.Rotate(turnHorizontalDirection, AxisMode.Horizontal);
+                _rotate.Rotate(AxisMode.Horizontal, rotateDirection.x);
             }
-            
-            int turnVerticalDirection = Mathf.RoundToInt(_input.Rotation.VerticalTurn.ReadValue<float>());
-            if (turnVerticalDirection != 0)
+
+            // vertical rotate
+            if (rotateDirection.y != 0)
             {
-                _rotate.Rotate(turnVerticalDirection, AxisMode.Vertical);
+                _rotate.Rotate(AxisMode.Vertical, rotateDirection.y);
             }
-        }
-
-        #endregion
-
-        #region Methods
-
-        private void OnScalingKeyboard(int value)
-        {
-            _scaling.ChangeScale(value);
-        }
-
-        private void OnResetRotation(AxisMode axisMode)
-        {
-            _rotate.ResetRotation(axisMode);
         }
 
         #endregion

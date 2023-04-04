@@ -13,21 +13,21 @@ namespace _Project.Scripts.Systems.Player
         [BoxGroup("Properties:"), LabelText("Speed horizontal rotate"), SerializeField, Range(60F, 180F)]
         private float _horizontalSpeed = 60F;
 
+        [BoxGroup("Properties:"), LabelText("Default horizontal rotation"), SerializeField, Range(-180F, 180F)]
+        private float _horizontalDefault;
+
         [BoxGroup("Properties:"), LabelText("Duration horizontal lerp"), SerializeField, Range(0.1F, 3F)]
         private float _horizontalDuration = 1F;
-
-        [BoxGroup("Properties:"), LabelText("Default horizontal rotation"), SerializeField, Range(-180F, 180F)]
-        private float _horizontalDefault = 0F;
 
         [PropertySpace(15F)]
         [BoxGroup("Properties:"), LabelText("Speed vertical rotate"), SerializeField, Range(60F, 180F)]
         private float _verticalSpeed = 60F;
 
-        [BoxGroup("Properties:"), LabelText("Duration vertical lerp"), SerializeField, Range(0.1F, 3F)]
-        private float _verticalDuration = 1F;
-
         [BoxGroup("Properties:"), LabelText("Default vertical rotation"), SerializeField, Range(50F, 80F)]
         private float _verticalDefault = 50F;
+
+        [BoxGroup("Properties:"), LabelText("Duration vertical lerp"), SerializeField, Range(0.1F, 3F)]
+        private float _verticalDuration = 1F;
 
         [BoxGroup("Dependencies:"), LabelText("Cinemachine Virtual Camera"), SerializeField]
         private CinemachineVirtualCamera _virtualCamera;
@@ -39,6 +39,10 @@ namespace _Project.Scripts.Systems.Player
         private KiCoroutine _horizontalRoutine;
         private KiCoroutine _verticalRoutine;
 
+        private Quaternion _currentHorizontalQuaternion;
+        private float _currentHorizontalValue;
+        private float _currentVerticalValue;
+
         private void Awake()
         {
             _physics = GetComponent<PlayerPhysics>();
@@ -49,88 +53,91 @@ namespace _Project.Scripts.Systems.Player
             _horizontalRoutine = new KiCoroutine();
             _verticalRoutine = new KiCoroutine();
 
-            SetHorizontalRotation(1F);
-            SetVerticalRotation(1F);
+            SetDefault(AxisMode.Horizontal);
+            SetDefault(AxisMode.Vertical);
         }
 
-        public void Rotate(int direction, AxisMode axisMode)
+        public void Rotate(AxisMode axisMode, int direction)
         {
-            StopRoutine(axisMode);
-            float angle;
             switch (axisMode)
             {
                 case AxisMode.Horizontal:
-                    angle = direction * _horizontalSpeed * Time.deltaTime;
-                    _physics.Rigidbody.rotation =
-                        Quaternion.Euler(new Vector3(0f, angle, 0f) + _physics.Rigidbody.rotation.eulerAngles);
-                    _pov.m_HorizontalAxis.Value += angle;
-                    _orbitalTransposer.m_XAxis.Value = _pov.m_HorizontalAxis.Value;
+                    _horizontalRoutine.StopRoutine();
+                    _orbitalTransposer.m_XAxis.Value += direction * _horizontalSpeed * Time.deltaTime;
+                    _pov.m_HorizontalAxis.Value += direction * _horizontalSpeed * Time.deltaTime;
+                    Vector3 targetAngle = new Vector3(0F, direction * _horizontalSpeed * Time.deltaTime, 0F);
+                    Quaternion target = Quaternion.Euler(targetAngle + _physics.Rigidbody.rotation.eulerAngles);
+                    _physics.Rigidbody.rotation = target;
                     break;
                 case AxisMode.Vertical:
-                    angle = direction * _verticalSpeed * Time.deltaTime;
-                    _pov.m_VerticalAxis.Value += angle;
+                    _verticalRoutine.StopRoutine();
+                    _pov.m_VerticalAxis.Value += direction * _verticalSpeed * Time.deltaTime;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(axisMode), axisMode, null);
             }
         }
 
-        public void ResetRotation(AxisMode axisMode)
-        {
-            StartRoutine(axisMode);
-        }
-
-        private void SetHorizontalRotation(float time)
-        {
-            _pov.m_HorizontalAxis.Value = Mathf.Lerp(_pov.m_HorizontalAxis.Value, _horizontalDefault, time);
-            _orbitalTransposer.m_XAxis.Value = Mathf.Lerp(_orbitalTransposer.m_XAxis.Value, _horizontalDefault, time);
-            _physics.Rigidbody.rotation = Quaternion.Euler(Vector3.Lerp(_physics.Rigidbody.rotation.eulerAngles,
-                new Vector3(0f, _horizontalDefault, 0f), time));
-        }
-
-        private void SetVerticalRotation(float time)
-        {
-            _pov.m_VerticalAxis.Value = Mathf.Lerp(_pov.m_VerticalAxis.Value, _verticalDefault, time);
-        }
-
-        private void StartRoutine(AxisMode axisMode)
+        public void SetDefault(AxisMode axisMode, float duration = -1F)
         {
             switch (axisMode)
             {
                 case AxisMode.Horizontal:
-                {
+                    _currentHorizontalValue = _orbitalTransposer.m_XAxis.Value;
+                    _currentHorizontalQuaternion = _physics.Rigidbody.rotation;
                     _horizontalRoutine.StopRoutine();
-                    _horizontalRoutine.StartRoutineLoop(
-                        SetHorizontalRotation,
-                        0F,
-                        _horizontalDuration
-                    );
+                    if (duration <= 0F)
+                    {
+                        _horizontalRoutine.StartRoutineLoop(
+                            t => LerpRotationToDefault(axisMode, t),
+                            _horizontalDuration
+                        );
+                    }
+                    else
+                    {
+                        _horizontalRoutine.StartRoutineLoop(
+                            t => LerpRotationToDefault(axisMode, t),
+                            duration
+                        );
+                    }
+
                     break;
-                }
                 case AxisMode.Vertical:
-                {
+                    _currentVerticalValue = _pov.m_VerticalAxis.Value;
                     _verticalRoutine.StopRoutine();
-                    _verticalRoutine.StartRoutineLoop(
-                        SetVerticalRotation,
-                        0F,
-                        _verticalDuration
-                    );
+                    if (duration <= 0F)
+                    {
+                        _verticalRoutine.StartRoutineLoop(
+                            t => LerpRotationToDefault(axisMode, t),
+                            _verticalDuration
+                        );
+                    }
+                    else
+                    {
+                        _verticalRoutine.StartRoutineLoop(
+                            t => LerpRotationToDefault(axisMode, t),
+                            duration
+                        );
+                    }
+
                     break;
-                }
                 default:
                     throw new ArgumentOutOfRangeException(nameof(axisMode), axisMode, null);
             }
         }
 
-        private void StopRoutine(AxisMode axisMode)
+        private void LerpRotationToDefault(AxisMode axisMode, float t)
         {
             switch (axisMode)
             {
                 case AxisMode.Horizontal:
-                    _horizontalRoutine.StopRoutine();
+                    _orbitalTransposer.m_XAxis.Value = Mathf.Lerp(_currentHorizontalValue, _horizontalDefault, t);
+                    _pov.m_HorizontalAxis.Value = Mathf.Lerp(_currentHorizontalValue, _horizontalDefault, t);
+                    Quaternion targetRotation = Quaternion.Euler(new Vector3(0F, _horizontalDefault, 0F));
+                    _physics.Rigidbody.rotation = Quaternion.Lerp(_currentHorizontalQuaternion, targetRotation, t);
                     break;
                 case AxisMode.Vertical:
-                    _verticalRoutine.StopRoutine();
+                    _pov.m_VerticalAxis.Value = Mathf.Lerp(_currentVerticalValue, _verticalDefault, t);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(axisMode), axisMode, null);

@@ -1,4 +1,5 @@
 using System.Collections;
+using KimicuUtilities;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -36,31 +37,36 @@ namespace _Project.Scripts.KimicuUtilities.Coroutines
 
         #region Routine Loop
 
-        public void StartRoutineLoop(UnityAction<float> call, float fromValue, float toValue, float speed = 1F)
+        public void StartRoutineLoop(UnityAction<float> call, float duration, float speed = 1F)
         {
             if (_routine != null) StopRoutine();
 
-            _routine = Coroutines.StartRoutineLoop(RoutineLoop(call, fromValue, toValue, speed));
+            _routine = Coroutines.StartRoutineLoop(RoutineLoop(call, duration, speed));
         }
 
-        public bool TryStartRoutineLoop(UnityAction<float> call, float fromValue, float toValue, float speed = 1F)
+        public bool TryStartRoutineLoop(UnityAction<float> call, float duration, float speed = 1F)
         {
             if (_routine != null) return false;
 
-            _routine = Coroutines.StartRoutineLoop(RoutineLoop(call, fromValue, toValue, speed));
+            _routine = Coroutines.StartRoutineLoop(RoutineLoop(call, duration, speed));
             return true;
         }
 
-        private IEnumerator RoutineLoop(UnityAction<float> call, float fromValue, float toValue, float speed = 1F)
+        private IEnumerator RoutineLoop(UnityAction<float> call, float duration, float speed = 1F)
         {
-            while (fromValue <= toValue)
+            float time = 0;
+            float value = 0;
+            while (true)
             {
+                call?.Invoke(value);
                 yield return new WaitForSeconds(Time.deltaTime * speed);
-                fromValue += Time.deltaTime * speed;
-                call?.Invoke(fromValue);
-            }
+                time += Time.deltaTime * speed;
+                value = (float)KiMath.CalculatePercentage(time, duration) / 100;
+                Debug.Log(value);
 
-            StopRoutine();
+                if (time > duration)
+                    StopRoutine();
+            }
         }
 
         #endregion
