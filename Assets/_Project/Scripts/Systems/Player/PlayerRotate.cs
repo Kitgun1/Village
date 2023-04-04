@@ -65,7 +65,7 @@ namespace _Project.Scripts.Systems.Player
                     _horizontalRoutine.StopRoutine();
                     _orbitalTransposer.m_XAxis.Value += direction * _horizontalSpeed * Time.deltaTime;
                     _pov.m_HorizontalAxis.Value += direction * _horizontalSpeed * Time.deltaTime;
-                    Vector3 targetAngle = new Vector3(0F, direction * _horizontalSpeed * Time.deltaTime, 0F);
+                    Vector3 targetAngle = new(0F, direction * _horizontalSpeed * Time.deltaTime, 0F);
                     Quaternion target = Quaternion.Euler(targetAngle + _physics.Rigidbody.rotation.eulerAngles);
                     _physics.Rigidbody.rotation = target;
                     break;

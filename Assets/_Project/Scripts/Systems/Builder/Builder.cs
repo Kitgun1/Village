@@ -9,7 +9,7 @@ namespace _Project.Scripts.Systems.Builder
         [BoxGroup("Dependencies"), LabelText("Building grid"), SerializeField]
         private BuildingGrid _buildingGrid;
 
-        private Building.Building _flyingBuilding;
+        private Buildings.Building _flyingBuilding;
         private Camera _mainCamera;
         private Input _playerInput;
 
@@ -40,7 +40,7 @@ namespace _Project.Scripts.Systems.Builder
 
         #region Methods
 
-        public void StartPlacingBuilding(Building.Building buildingPrefab)
+        public void StartPlacingBuilding(Buildings.Building buildingPrefab)
         {
             if (_flyingBuilding != null) Destroy(_flyingBuilding.gameObject);
 
@@ -66,7 +66,7 @@ namespace _Project.Scripts.Systems.Builder
             Vector3 mousePosition = _playerInput.Builder.MoveCursor.ReadValue<Vector2>();
             mousePosition.z = _mainCamera.farClipPlane;
 
-            Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+            Plane groundPlane = new(Vector3.up, Vector3.zero);
             Ray ray = _mainCamera.ScreenPointToRay(mousePosition);
 
             if (!groundPlane.Raycast(ray, out float position)) return;

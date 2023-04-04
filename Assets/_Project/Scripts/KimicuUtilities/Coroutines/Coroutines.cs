@@ -11,7 +11,7 @@ namespace _Project.Scripts.KimicuUtilities.Coroutines
             {
                 if (_instance != null) return _instance;
                 
-                GameObject gameObject = new GameObject("[COROUTINE MANAGER]");
+                GameObject gameObject = new("[COROUTINE MANAGER]");
                 _instance = gameObject.AddComponent<Coroutines>();
                 DontDestroyOnLoad(gameObject);
                 return _instance;

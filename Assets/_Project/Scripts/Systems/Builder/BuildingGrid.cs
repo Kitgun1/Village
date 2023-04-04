@@ -17,7 +17,7 @@ namespace _Project.Scripts.Systems.Builder
         [BoxGroup("Other:"), LabelText("Color 2"), SerializeField]
         private Color _color2;
 
-        private Building.Building[,] _grid;
+        private Buildings.Building[,] _grid;
 
         public Vector2Int Size => _gridSize;
         public Vector2 Offset => _gridOffset;
@@ -26,7 +26,7 @@ namespace _Project.Scripts.Systems.Builder
 
         private void Awake()
         {
-            _grid = new Building.Building[_gridSize.x, _gridSize.y];
+            _grid = new Buildings.Building[_gridSize.x, _gridSize.y];
         }
 
         private void OnDrawGizmosSelected()
@@ -48,7 +48,7 @@ namespace _Project.Scripts.Systems.Builder
 
         #region Methods
 
-        public void PlaceTake(Building.Building building, int placeX, int placeY)
+        public void PlaceTake(Buildings.Building building, int placeX, int placeY)
         {
             for (int x = 0; x < building.Size.x; x++)
             {
@@ -59,7 +59,7 @@ namespace _Project.Scripts.Systems.Builder
             }
         }
 
-        public Building.Building GetBuilding(Vector2Int boxSize, int placeX, int placeY)
+        public Buildings.Building GetBuilding(Vector2Int boxSize, int placeX, int placeY)
         {
             for (int x = 0; x < boxSize.x; x++)
             {
