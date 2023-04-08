@@ -1,12 +1,10 @@
+using System;
 using _Project.Scripts.Enums;
 using UnityEngine;
 
 namespace _Project.Scripts.Systems.Player
 {
-    [RequireComponent(
-        typeof(PlayerMovement), 
-        typeof(PlayerScaling), 
-        typeof(PlayerRotate))]
+    [RequireComponent(typeof(PlayerMovement), typeof(PlayerScaling), typeof(PlayerRotate))]
     public class PlayerInput : MonoBehaviour
     {
         private Input _input;
@@ -18,15 +16,19 @@ namespace _Project.Scripts.Systems.Player
 
         private void Awake()
         {
+            Cursor.lockState = CursorLockMode.Confined;
+
             _movement = GetComponent<PlayerMovement>();
             _scaling = GetComponent<PlayerScaling>();
             _rotate = GetComponent<PlayerRotate>();
             _input = new Input();
+        }
 
-            _input.Scaling.Zoom.performed += ctx => _scaling.ChangeScale(1);
-            _input.Scaling.Decrease.performed += ctx => _scaling.ChangeScale(-1);
-            _input.Rotation.ResetHorizontalRotation.performed += ctx => _rotate.SetDefault(AxisMode.Horizontal);
-            _input.Rotation.ResetVerticalRotation.performed += ctx => _rotate.SetDefault(AxisMode.Vertical);
+        private void Start()
+        {
+            InputInitStarted();
+            InputInitPerformed();
+            InputInitCanceled();
         }
 
         private void OnEnable()
@@ -39,37 +41,72 @@ namespace _Project.Scripts.Systems.Player
             _input.Disable();
         }
 
-        private void Update()
+        #endregion
+
+        #region Methods
+
+        private void InputInitStarted()
         {
-            // scaling
-            int scrollDirection = Mathf.RoundToInt(_input.Scaling.Scroll.ReadValue<float>());
-            if (scrollDirection != 0)
+            // Camera Rotation
+            _input.CameraRotation.ResetXAxisRotation.started += ctx => { _rotate.SetDefault(AxisMode.AxisY); };
+            _input.CameraRotation.ResetYAxisRotation.started += ctx => { _rotate.SetDefault(AxisMode.AxisX); };
+            _input.CameraRotation.Reset2DRotation.started += ctx => { _rotate.SetDefault(AxisMode.Axis2D); };
+
+            // Other
+            _input.Other.CameraInspectionMode.started += ctx =>
             {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            };
+        }
+
+        private void InputInitPerformed()
+        {
+            // Scaling
+            _input.Scaling.Zoom.performed += ctx => { _scaling.ChangeScale(1); };
+            _input.Scaling.Decrease.performed += ctx => { _scaling.ChangeScale(-1); };
+            _input.Scaling.ScrollZoom.performed += ctx =>
+            {
+                int scrollDirection = Mathf.RoundToInt(ctx.ReadValue<float>());
                 _scaling.ChangeScale(scrollDirection);
-            }
+            };
 
-            // movement
-            Vector2 moveDirection = _input.Move.Movement.ReadValue<Vector2>();
-            _movement.SetDirection(moveDirection);
-            _movement.SetSpeed((int)_scaling.ScaleType);
-
-            Vector2Int rotateDirection = Vector2Int.RoundToInt(
-                new Vector2(
-                    _input.Rotation.HorizontalTurn.ReadValue<float>(),
-                    _input.Rotation.VerticalTurn.ReadValue<float>()
-                ).normalized);
-
-            //  horizontal rotate
-            if (rotateDirection.x != 0)
+            // Camera Rotation
+            _input.CameraRotation.Rotation2D.performed += ctx =>
             {
-                _rotate.Rotate(AxisMode.Horizontal, rotateDirection.x);
-            }
+                _rotate.SetDirection(ctx.ReadValue<Vector2>());
+            };
 
-            // vertical rotate
-            if (rotateDirection.y != 0)
+            // Movement
+            _input.Move.Movement.performed += ctx =>
             {
-                _rotate.Rotate(AxisMode.Vertical, rotateDirection.y);
-            }
+                Vector2 moveDirection = ctx.ReadValue<Vector2>();
+                _movement.SetDirection(moveDirection);
+                _movement.SetSpeed((int)_scaling.ScaleType);
+            };
+        }
+
+        private void InputInitCanceled()
+        {
+            // Camera Rotation
+            _input.CameraRotation.Rotation2D.canceled += ctx =>
+            {
+                _rotate.SetDirection(ctx.ReadValue<Vector2>());
+            };
+
+            // Movement
+            _input.Move.Movement.canceled += ctx =>
+            {
+                _movement.SetDirection(Vector2.zero);
+                _movement.SetSpeed((int)_scaling.ScaleType);
+            };
+
+            // Other
+            _input.Other.CameraInspectionMode.canceled += ctx =>
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Confined;
+            };
         }
 
         #endregion

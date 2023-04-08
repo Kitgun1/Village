@@ -2,7 +2,8 @@ namespace _Project.Scripts.Enums
 {
     public enum AxisMode
     {
-        Horizontal,
-        Vertical
+        AxisY,
+        AxisX,
+        Axis2D
     }
 }

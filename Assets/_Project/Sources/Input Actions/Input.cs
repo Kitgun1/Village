@@ -203,7 +203,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
             ""id"": ""d1f6fbce-f0b8-48c2-89c9-4edf5ee5f70a"",
             ""actions"": [
                 {
-                    ""name"": ""Scroll"",
+                    ""name"": ""Scroll Zoom"",
                     ""type"": ""Value"",
                     ""id"": ""2c725124-01d8-4ee8-839b-b499e511ca49"",
                     ""expectedControlType"": ""Axis"",
@@ -238,7 +238,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Scroll"",
+                    ""action"": ""Scroll Zoom"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -249,7 +249,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Scroll"",
+                    ""action"": ""Scroll Zoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -260,7 +260,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Scroll"",
+                    ""action"": ""Scroll Zoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -333,40 +333,40 @@ public partial class @Input : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Rotation"",
-            ""id"": ""0b7780c9-8ac8-45d0-a30a-c324605f98b7"",
+            ""name"": ""Camera Rotation"",
+            ""id"": ""5cfc2556-a475-430e-acb8-5c2edcc88494"",
             ""actions"": [
                 {
-                    ""name"": ""Horizontal Turn"",
-                    ""type"": ""Value"",
-                    ""id"": ""a3df30a5-116d-4f63-bf74-d9306eff5c3a"",
-                    ""expectedControlType"": """",
+                    ""name"": ""Rotation2D"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""b79719b3-2f42-46ba-87b8-db6cb5b422dc"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Reset Horizontal Rotation"",
+                    ""name"": ""Reset2DRotation"",
                     ""type"": ""Button"",
-                    ""id"": ""1d07a436-326a-4739-9a9d-f522d25edb70"",
+                    ""id"": ""dde395af-c071-4a9f-ae2d-a54653212e52"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Vertical Turn"",
-                    ""type"": ""Value"",
-                    ""id"": ""5d228aca-192e-4fb7-916d-0953a6f21eb2"",
-                    ""expectedControlType"": """",
+                    ""name"": ""ResetYAxisRotation"",
+                    ""type"": ""Button"",
+                    ""id"": ""a0a3db9b-5f85-4c89-8faf-cff37ac51671"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Reset Vertical Rotation"",
+                    ""name"": ""ResetXAxisRotation"",
                     ""type"": ""Button"",
-                    ""id"": ""37916841-ca3c-4569-8719-be7a85154566"",
+                    ""id"": ""b56c0675-70ec-4083-a9b9-92b98eae00c8"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -375,92 +375,219 @@ public partial class @Input : IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""9526aa80-c678-44c1-a95a-a82b0d8b2c3e"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""Axis"",
+                    ""id"": ""4721d415-cd2b-4a20-a477-a294c60fca41"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Horizontal Turn"",
+                    ""action"": ""Rotation2D"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""ae22c16a-3afb-48d1-a208-9224b85987a3"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Horizontal Turn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""148568a0-1715-4e69-9997-072f7395337a"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Horizontal Turn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7a10c97a-ae94-484c-82e2-d7a401e18995"",
-                    ""path"": ""<Keyboard>/home"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Reset Horizontal Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""d886ba49-b2b5-4de9-8fd0-4b9cd182f485"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Vertical Turn"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""6fc301b5-3e36-48a5-bf7d-8dc09717e47e"",
+                    ""name"": ""up"",
+                    ""id"": ""6f2773ea-681a-40c0-b4b8-5f0e49884607"",
                     ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Vertical Turn"",
+                    ""action"": ""Rotation2D"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""5faf19bf-3d0a-4edb-8745-976df9a0fa2f"",
+                    ""name"": ""down"",
+                    ""id"": ""0d603162-9fb9-4497-9447-89acdcfa0e2d"",
                     ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Vertical Turn"",
+                    ""action"": ""Rotation2D"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b4609eca-85eb-4924-8a06-4739df63bc6c"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Rotation2D"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""46b2921f-297a-4ec9-8010-7067ca668972"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Rotation2D"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""d868d4d3-400e-4a23-ada9-2aa135ef000c"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation2D"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""16883fc8-4153-4532-bfc6-309d8fad5dcc"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Rotation2D"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""a79ac42b-2480-427b-b103-7c247e264942"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": ""InvertVector2(invertX=false),ScaleVector2(x=0.2,y=0.2)"",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Rotation2D"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ab3a56d2-3295-4336-b48d-5b2df5b981f7"",
+                    ""id"": ""29ef0b79-c7f0-4ec2-9be8-fe9e660c4805"",
                     ""path"": ""<Keyboard>/home"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Reset Vertical Rotation"",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Reset2DRotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""f99dd4c9-0733-41f4-9be6-b699a5c87b53"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResetYAxisRotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""7654a91d-e95e-4dd2-8ac9-234ea862e9ec"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""ResetYAxisRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""bdc754d1-9689-4776-83b2-125e00337ddd"",
+                    ""path"": ""<Keyboard>/home"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""ResetYAxisRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""ba8ad71e-0a9e-4f87-b93c-1d7f015ea345"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResetXAxisRotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""b87becc1-b5ce-4dac-8a3e-3702351ab777"",
+                    ""path"": ""<Keyboard>/alt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""ResetXAxisRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""7d05a3cf-c1b3-46c6-b0af-071f9930803f"",
+                    ""path"": ""<Keyboard>/home"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""ResetXAxisRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
+        },
+        {
+            ""name"": ""Other"",
+            ""id"": ""b0452ccd-c1cc-42ce-865e-b25f074b912c"",
+            ""actions"": [
+                {
+                    ""name"": ""Camera Inspection Mode"",
+                    ""type"": ""Button"",
+                    ""id"": ""9ad96ddf-7744-479d-aa39-3ad926367616"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""45bfa014-c2a5-43f4-8f62-13cdafb3ec14"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera Inspection Mode"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""9fc589c4-d13e-4819-833a-c926caa19fe0"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Camera Inspection Mode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""718d7fdc-5486-4b5e-943f-a197ea5ed797"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Camera Inspection Mode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -493,15 +620,18 @@ public partial class @Input : IInputActionCollection2, IDisposable
         m_Move_Movement = m_Move.FindAction("Movement", throwIfNotFound: true);
         // Scaling
         m_Scaling = asset.FindActionMap("Scaling", throwIfNotFound: true);
-        m_Scaling_Scroll = m_Scaling.FindAction("Scroll", throwIfNotFound: true);
+        m_Scaling_ScrollZoom = m_Scaling.FindAction("Scroll Zoom", throwIfNotFound: true);
         m_Scaling_Zoom = m_Scaling.FindAction("Zoom", throwIfNotFound: true);
         m_Scaling_Decrease = m_Scaling.FindAction("Decrease", throwIfNotFound: true);
-        // Rotation
-        m_Rotation = asset.FindActionMap("Rotation", throwIfNotFound: true);
-        m_Rotation_HorizontalTurn = m_Rotation.FindAction("Horizontal Turn", throwIfNotFound: true);
-        m_Rotation_ResetHorizontalRotation = m_Rotation.FindAction("Reset Horizontal Rotation", throwIfNotFound: true);
-        m_Rotation_VerticalTurn = m_Rotation.FindAction("Vertical Turn", throwIfNotFound: true);
-        m_Rotation_ResetVerticalRotation = m_Rotation.FindAction("Reset Vertical Rotation", throwIfNotFound: true);
+        // Camera Rotation
+        m_CameraRotation = asset.FindActionMap("Camera Rotation", throwIfNotFound: true);
+        m_CameraRotation_Rotation2D = m_CameraRotation.FindAction("Rotation2D", throwIfNotFound: true);
+        m_CameraRotation_Reset2DRotation = m_CameraRotation.FindAction("Reset2DRotation", throwIfNotFound: true);
+        m_CameraRotation_ResetYAxisRotation = m_CameraRotation.FindAction("ResetYAxisRotation", throwIfNotFound: true);
+        m_CameraRotation_ResetXAxisRotation = m_CameraRotation.FindAction("ResetXAxisRotation", throwIfNotFound: true);
+        // Other
+        m_Other = asset.FindActionMap("Other", throwIfNotFound: true);
+        m_Other_CameraInspectionMode = m_Other.FindAction("Camera Inspection Mode", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -635,14 +765,14 @@ public partial class @Input : IInputActionCollection2, IDisposable
     // Scaling
     private readonly InputActionMap m_Scaling;
     private IScalingActions m_ScalingActionsCallbackInterface;
-    private readonly InputAction m_Scaling_Scroll;
+    private readonly InputAction m_Scaling_ScrollZoom;
     private readonly InputAction m_Scaling_Zoom;
     private readonly InputAction m_Scaling_Decrease;
     public struct ScalingActions
     {
         private @Input m_Wrapper;
         public ScalingActions(@Input wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Scroll => m_Wrapper.m_Scaling_Scroll;
+        public InputAction @ScrollZoom => m_Wrapper.m_Scaling_ScrollZoom;
         public InputAction @Zoom => m_Wrapper.m_Scaling_Zoom;
         public InputAction @Decrease => m_Wrapper.m_Scaling_Decrease;
         public InputActionMap Get() { return m_Wrapper.m_Scaling; }
@@ -654,9 +784,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_ScalingActionsCallbackInterface != null)
             {
-                @Scroll.started -= m_Wrapper.m_ScalingActionsCallbackInterface.OnScroll;
-                @Scroll.performed -= m_Wrapper.m_ScalingActionsCallbackInterface.OnScroll;
-                @Scroll.canceled -= m_Wrapper.m_ScalingActionsCallbackInterface.OnScroll;
+                @ScrollZoom.started -= m_Wrapper.m_ScalingActionsCallbackInterface.OnScrollZoom;
+                @ScrollZoom.performed -= m_Wrapper.m_ScalingActionsCallbackInterface.OnScrollZoom;
+                @ScrollZoom.canceled -= m_Wrapper.m_ScalingActionsCallbackInterface.OnScrollZoom;
                 @Zoom.started -= m_Wrapper.m_ScalingActionsCallbackInterface.OnZoom;
                 @Zoom.performed -= m_Wrapper.m_ScalingActionsCallbackInterface.OnZoom;
                 @Zoom.canceled -= m_Wrapper.m_ScalingActionsCallbackInterface.OnZoom;
@@ -667,9 +797,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
             m_Wrapper.m_ScalingActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Scroll.started += instance.OnScroll;
-                @Scroll.performed += instance.OnScroll;
-                @Scroll.canceled += instance.OnScroll;
+                @ScrollZoom.started += instance.OnScrollZoom;
+                @ScrollZoom.performed += instance.OnScrollZoom;
+                @ScrollZoom.canceled += instance.OnScrollZoom;
                 @Zoom.started += instance.OnZoom;
                 @Zoom.performed += instance.OnZoom;
                 @Zoom.canceled += instance.OnZoom;
@@ -681,62 +811,95 @@ public partial class @Input : IInputActionCollection2, IDisposable
     }
     public ScalingActions @Scaling => new ScalingActions(this);
 
-    // Rotation
-    private readonly InputActionMap m_Rotation;
-    private IRotationActions m_RotationActionsCallbackInterface;
-    private readonly InputAction m_Rotation_HorizontalTurn;
-    private readonly InputAction m_Rotation_ResetHorizontalRotation;
-    private readonly InputAction m_Rotation_VerticalTurn;
-    private readonly InputAction m_Rotation_ResetVerticalRotation;
-    public struct RotationActions
+    // Camera Rotation
+    private readonly InputActionMap m_CameraRotation;
+    private ICameraRotationActions m_CameraRotationActionsCallbackInterface;
+    private readonly InputAction m_CameraRotation_Rotation2D;
+    private readonly InputAction m_CameraRotation_Reset2DRotation;
+    private readonly InputAction m_CameraRotation_ResetYAxisRotation;
+    private readonly InputAction m_CameraRotation_ResetXAxisRotation;
+    public struct CameraRotationActions
     {
         private @Input m_Wrapper;
-        public RotationActions(@Input wrapper) { m_Wrapper = wrapper; }
-        public InputAction @HorizontalTurn => m_Wrapper.m_Rotation_HorizontalTurn;
-        public InputAction @ResetHorizontalRotation => m_Wrapper.m_Rotation_ResetHorizontalRotation;
-        public InputAction @VerticalTurn => m_Wrapper.m_Rotation_VerticalTurn;
-        public InputAction @ResetVerticalRotation => m_Wrapper.m_Rotation_ResetVerticalRotation;
-        public InputActionMap Get() { return m_Wrapper.m_Rotation; }
+        public CameraRotationActions(@Input wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Rotation2D => m_Wrapper.m_CameraRotation_Rotation2D;
+        public InputAction @Reset2DRotation => m_Wrapper.m_CameraRotation_Reset2DRotation;
+        public InputAction @ResetYAxisRotation => m_Wrapper.m_CameraRotation_ResetYAxisRotation;
+        public InputAction @ResetXAxisRotation => m_Wrapper.m_CameraRotation_ResetXAxisRotation;
+        public InputActionMap Get() { return m_Wrapper.m_CameraRotation; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(RotationActions set) { return set.Get(); }
-        public void SetCallbacks(IRotationActions instance)
+        public static implicit operator InputActionMap(CameraRotationActions set) { return set.Get(); }
+        public void SetCallbacks(ICameraRotationActions instance)
         {
-            if (m_Wrapper.m_RotationActionsCallbackInterface != null)
+            if (m_Wrapper.m_CameraRotationActionsCallbackInterface != null)
             {
-                @HorizontalTurn.started -= m_Wrapper.m_RotationActionsCallbackInterface.OnHorizontalTurn;
-                @HorizontalTurn.performed -= m_Wrapper.m_RotationActionsCallbackInterface.OnHorizontalTurn;
-                @HorizontalTurn.canceled -= m_Wrapper.m_RotationActionsCallbackInterface.OnHorizontalTurn;
-                @ResetHorizontalRotation.started -= m_Wrapper.m_RotationActionsCallbackInterface.OnResetHorizontalRotation;
-                @ResetHorizontalRotation.performed -= m_Wrapper.m_RotationActionsCallbackInterface.OnResetHorizontalRotation;
-                @ResetHorizontalRotation.canceled -= m_Wrapper.m_RotationActionsCallbackInterface.OnResetHorizontalRotation;
-                @VerticalTurn.started -= m_Wrapper.m_RotationActionsCallbackInterface.OnVerticalTurn;
-                @VerticalTurn.performed -= m_Wrapper.m_RotationActionsCallbackInterface.OnVerticalTurn;
-                @VerticalTurn.canceled -= m_Wrapper.m_RotationActionsCallbackInterface.OnVerticalTurn;
-                @ResetVerticalRotation.started -= m_Wrapper.m_RotationActionsCallbackInterface.OnResetVerticalRotation;
-                @ResetVerticalRotation.performed -= m_Wrapper.m_RotationActionsCallbackInterface.OnResetVerticalRotation;
-                @ResetVerticalRotation.canceled -= m_Wrapper.m_RotationActionsCallbackInterface.OnResetVerticalRotation;
+                @Rotation2D.started -= m_Wrapper.m_CameraRotationActionsCallbackInterface.OnRotation2D;
+                @Rotation2D.performed -= m_Wrapper.m_CameraRotationActionsCallbackInterface.OnRotation2D;
+                @Rotation2D.canceled -= m_Wrapper.m_CameraRotationActionsCallbackInterface.OnRotation2D;
+                @Reset2DRotation.started -= m_Wrapper.m_CameraRotationActionsCallbackInterface.OnReset2DRotation;
+                @Reset2DRotation.performed -= m_Wrapper.m_CameraRotationActionsCallbackInterface.OnReset2DRotation;
+                @Reset2DRotation.canceled -= m_Wrapper.m_CameraRotationActionsCallbackInterface.OnReset2DRotation;
+                @ResetYAxisRotation.started -= m_Wrapper.m_CameraRotationActionsCallbackInterface.OnResetYAxisRotation;
+                @ResetYAxisRotation.performed -= m_Wrapper.m_CameraRotationActionsCallbackInterface.OnResetYAxisRotation;
+                @ResetYAxisRotation.canceled -= m_Wrapper.m_CameraRotationActionsCallbackInterface.OnResetYAxisRotation;
+                @ResetXAxisRotation.started -= m_Wrapper.m_CameraRotationActionsCallbackInterface.OnResetXAxisRotation;
+                @ResetXAxisRotation.performed -= m_Wrapper.m_CameraRotationActionsCallbackInterface.OnResetXAxisRotation;
+                @ResetXAxisRotation.canceled -= m_Wrapper.m_CameraRotationActionsCallbackInterface.OnResetXAxisRotation;
             }
-            m_Wrapper.m_RotationActionsCallbackInterface = instance;
+            m_Wrapper.m_CameraRotationActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @HorizontalTurn.started += instance.OnHorizontalTurn;
-                @HorizontalTurn.performed += instance.OnHorizontalTurn;
-                @HorizontalTurn.canceled += instance.OnHorizontalTurn;
-                @ResetHorizontalRotation.started += instance.OnResetHorizontalRotation;
-                @ResetHorizontalRotation.performed += instance.OnResetHorizontalRotation;
-                @ResetHorizontalRotation.canceled += instance.OnResetHorizontalRotation;
-                @VerticalTurn.started += instance.OnVerticalTurn;
-                @VerticalTurn.performed += instance.OnVerticalTurn;
-                @VerticalTurn.canceled += instance.OnVerticalTurn;
-                @ResetVerticalRotation.started += instance.OnResetVerticalRotation;
-                @ResetVerticalRotation.performed += instance.OnResetVerticalRotation;
-                @ResetVerticalRotation.canceled += instance.OnResetVerticalRotation;
+                @Rotation2D.started += instance.OnRotation2D;
+                @Rotation2D.performed += instance.OnRotation2D;
+                @Rotation2D.canceled += instance.OnRotation2D;
+                @Reset2DRotation.started += instance.OnReset2DRotation;
+                @Reset2DRotation.performed += instance.OnReset2DRotation;
+                @Reset2DRotation.canceled += instance.OnReset2DRotation;
+                @ResetYAxisRotation.started += instance.OnResetYAxisRotation;
+                @ResetYAxisRotation.performed += instance.OnResetYAxisRotation;
+                @ResetYAxisRotation.canceled += instance.OnResetYAxisRotation;
+                @ResetXAxisRotation.started += instance.OnResetXAxisRotation;
+                @ResetXAxisRotation.performed += instance.OnResetXAxisRotation;
+                @ResetXAxisRotation.canceled += instance.OnResetXAxisRotation;
             }
         }
     }
-    public RotationActions @Rotation => new RotationActions(this);
+    public CameraRotationActions @CameraRotation => new CameraRotationActions(this);
+
+    // Other
+    private readonly InputActionMap m_Other;
+    private IOtherActions m_OtherActionsCallbackInterface;
+    private readonly InputAction m_Other_CameraInspectionMode;
+    public struct OtherActions
+    {
+        private @Input m_Wrapper;
+        public OtherActions(@Input wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CameraInspectionMode => m_Wrapper.m_Other_CameraInspectionMode;
+        public InputActionMap Get() { return m_Wrapper.m_Other; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(OtherActions set) { return set.Get(); }
+        public void SetCallbacks(IOtherActions instance)
+        {
+            if (m_Wrapper.m_OtherActionsCallbackInterface != null)
+            {
+                @CameraInspectionMode.started -= m_Wrapper.m_OtherActionsCallbackInterface.OnCameraInspectionMode;
+                @CameraInspectionMode.performed -= m_Wrapper.m_OtherActionsCallbackInterface.OnCameraInspectionMode;
+                @CameraInspectionMode.canceled -= m_Wrapper.m_OtherActionsCallbackInterface.OnCameraInspectionMode;
+            }
+            m_Wrapper.m_OtherActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @CameraInspectionMode.started += instance.OnCameraInspectionMode;
+                @CameraInspectionMode.performed += instance.OnCameraInspectionMode;
+                @CameraInspectionMode.canceled += instance.OnCameraInspectionMode;
+            }
+        }
+    }
+    public OtherActions @Other => new OtherActions(this);
     private int m_MouseKeyboardSchemeIndex = -1;
     public InputControlScheme MouseKeyboardScheme
     {
@@ -757,15 +920,19 @@ public partial class @Input : IInputActionCollection2, IDisposable
     }
     public interface IScalingActions
     {
-        void OnScroll(InputAction.CallbackContext context);
+        void OnScrollZoom(InputAction.CallbackContext context);
         void OnZoom(InputAction.CallbackContext context);
         void OnDecrease(InputAction.CallbackContext context);
     }
-    public interface IRotationActions
+    public interface ICameraRotationActions
     {
-        void OnHorizontalTurn(InputAction.CallbackContext context);
-        void OnResetHorizontalRotation(InputAction.CallbackContext context);
-        void OnVerticalTurn(InputAction.CallbackContext context);
-        void OnResetVerticalRotation(InputAction.CallbackContext context);
+        void OnRotation2D(InputAction.CallbackContext context);
+        void OnReset2DRotation(InputAction.CallbackContext context);
+        void OnResetYAxisRotation(InputAction.CallbackContext context);
+        void OnResetXAxisRotation(InputAction.CallbackContext context);
+    }
+    public interface IOtherActions
+    {
+        void OnCameraInspectionMode(InputAction.CallbackContext context);
     }
 }
