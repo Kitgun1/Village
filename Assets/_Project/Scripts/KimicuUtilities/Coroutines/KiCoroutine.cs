@@ -62,10 +62,11 @@ namespace _Project.Scripts.KimicuUtilities.Coroutines
                 yield return new WaitForSeconds(Time.deltaTime * speed);
                 time += Time.deltaTime * speed;
                 value = (float)KiMath.CalculatePercentage(time, duration) / 100;
-                Debug.Log(value);
 
                 if (time > duration)
+                {
                     StopRoutine();
+                }
             }
         }
 
