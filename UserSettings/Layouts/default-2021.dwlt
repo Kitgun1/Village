@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 2560
     height: 1349
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Console
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 421}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -73,7 +73,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: AllLayout
+  m_LastLoadedLayoutName: 
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 3550
+  controlID: 27
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,12 +139,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2057
+    width: 2113
     height: 1299
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 3551
+  controlID: 34
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,12 +164,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2057
-    height: 841
+    width: 2113
+    height: 840
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 3552
+  controlID: 35
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,10 +187,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 347
-    height: 841
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    width: 350
+    height: 840
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -211,10 +211,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 347
+    x: 350
     y: 0
-    width: 1710
-    height: 841
+    width: 1763
+    height: 840
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
@@ -238,25 +238,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 841
-    width: 2057
-    height: 458
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 20}
+    y: 840
+    width: 2113
+    height: 459
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 20}
   - {fileID: 21}
   - {fileID: 22}
   - {fileID: 23}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,9 +272,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 2057
+    x: 2113
     y: 0
-    width: 503
+    width: 447
     height: 1299
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
@@ -306,10 +306,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 347
+    x: 350
     y: 73
-    width: 1708
-    height: 820
+    width: 1761
+    height: 819
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1708, y: 799}
+  m_TargetSize: {x: 1920, y: 1080}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -328,17 +328,17 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
-  m_Stats: 1
-  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_Stats: 0
+  m_SelectedSizes: 03000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -854
-    m_HBaseRangeMax: 854
-    m_VBaseRangeMin: -399.5
-    m_VBaseRangeMax: 399.5
+    m_HBaseRangeMin: -960
+    m_HBaseRangeMax: 960
+    m_VBaseRangeMin: -540
+    m_VBaseRangeMax: 540
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -356,23 +356,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1708
-      height: 799
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 854, y: 399.5}
+      width: 1761
+      height: 798
+    m_Scale: {x: 0.73888886, y: 0.73888886}
+    m_Translation: {x: 880.5, y: 398.99997}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -854
-      y: -399.5
-      width: 1708
-      height: 799
+      x: -1191.6542
+      y: -540
+      width: 2383.3083
+      height: 1080
     m_MinimalGUI: 1
-  m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1708, y: 820}
+  m_defaultScale: 0.73888886
+  m_LastWindowPixelSize: {x: 1761, y: 819}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -400,8 +400,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 346
-    height: 820
+    width: 349
+    height: 819
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -409,9 +409,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d4600000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 10fbffffc25f00001e600000
+      m_ExpandedIDs: 44f5ffff10fbfffff6600000326100004e610000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -427,7 +427,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 8}
+        m_ClientGUIView: {fileID: 11}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -455,10 +455,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 347
+    x: 350
     y: 73
-    width: 1708
-    height: 820
+    width: 1761
+    height: 819
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -660,9 +660,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.4858801, y: 6.191529, z: -7.927348}
+    m_Target: {x: -0.83403397, y: 17.382137, z: -23.27605}
     speed: 2
-    m_Value: {x: -2.4858801, y: 6.191529, z: -7.927348}
+    m_Value: {x: -0.83403397, y: 17.382137, z: -23.27605}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -709,13 +709,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.32432136, y: 0.059933487, z: -0.020657066, w: 0.94383895}
+    m_Target: {x: 0.28280196, y: 0.01921073, z: -0.0056961975, w: 0.95896965}
     speed: 2
-    m_Value: {x: 0.32431567, y: 0.059932437, z: -0.020656705, w: 0.94382244}
+    m_Value: {x: 0.28281, y: 0.017772242, z: -0.005271985, w: 0.9589968}
   m_Size:
-    m_Target: 1.2315754
+    m_Target: 0.8660254
     speed: 2
-    m_Value: 1.2315754
+    m_Value: 0.8660254
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -733,7 +733,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.022167068, y: -0.043165445, z: -0.0009600942, w: 0.99882764}
+  m_LastSceneViewRotation: {x: -0.069782205, y: -0.041295607, z: 0.002895442, w: -0.99670917}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -760,18 +760,18 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 347
+    x: 350
     y: 73
-    width: 1708
-    height: 820
+    width: 1761
+    height: 819
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_ActionMapsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c25ffcdd
-    m_LastClickedID: -570662974
+    m_SelectedIDs: 53f12aa5
+    m_LastClickedID: -1523912365
     m_ExpandedIDs: 00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -792,9 +792,9 @@ MonoBehaviour:
     m_SearchString: 
   m_ActionsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6d640203
-    m_LastClickedID: 50488429
-    m_ExpandedIDs: d2343982e800cb8641b0ad88c42a348ca25ad08c0e91a4a6cd054aaa74ce2bae669bcbb08b2b2bb2224f35b29adae4b25cbd63c4023011c842e97cd971f192dad8a296dabd2f9edac25ffcdd19aa39e6e1e048e81d8323ecfd9eddf04f55f3f0d30c82f314551008fe8c8f145c5c971ab84d9a1ab4f4b81e0c02d41fe349e72b1251fe33ac224737fd824e38c7c96d38554b5a39a24d583d1491e546aacf4647fd5c2548a1278d4ca1f97a56a53440591c30a15e6223ae61aae9b6641158ad6a7fae036e2837446f3a16b570e292d674eafe71775cab7b7c
+    m_SelectedIDs: 2359f783
+    m_LastClickedID: -2080941789
+    m_ExpandedIDs: 80f8a881d2343982e800cb8641b0ad88c42a348ca25ad08c53f12aa50e91a4a6cd054aaadcd822ad74ce2baea82331af669bcbb08b2b2bb2224f35b29adae4b24abd7bb59d8fdfbf5cbd63c4023011c838bfb3cf5c6169d842e97cd971f192dad8a296dabd2f9edac25ffcdd91b3b4dfe1e048e8a26034ea4a16fdeb1d8323ecbb4d32effd9eddf04f55f3f0bdb5f6f517150812fe8c8f145c5c971ab84d9a1ab4f4b81e0c02d41ff3b5f320e349e72b8e4c4f331251fe33ac224737fd824e38c7c96d38a0a80439554b5a39a24d583d45d2613fc33ad4411491e546aacf4647fd5c2548a1278d4ca1f97a56a53440591c30a15e6223ae61aae9b6641158ad6a2837446f3a16b570c4fda472e292d674eafe71775cab7b7c
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -816,11 +816,11 @@ MonoBehaviour:
     m_AdvancedDropdownState:
       states:
       - itemId: 371857150
-        selectedIndex: 0
+        selectedIndex: 5
         scroll: {x: 0, y: 0}
       - itemId: 82801685
-        selectedIndex: 0
-        scroll: {x: 0, y: 0}
+        selectedIndex: 6
+        scroll: {x: 0, y: 114.5}
       - itemId: -298396491
         selectedIndex: -1
         scroll: {x: 0, y: 0}
@@ -846,7 +846,7 @@ MonoBehaviour:
         selectedIndex: -1
         scroll: {x: 0, y: 0}
       - itemId: -376880915
-        selectedIndex: -1
+        selectedIndex: 0
         scroll: {x: 0, y: 0}
       - itemId: -1273337413
         selectedIndex: -1
@@ -870,7 +870,7 @@ MonoBehaviour:
         selectedIndex: -1
         scroll: {x: 0, y: 97.5}
       - itemId: 656259478
-        selectedIndex: 5
+        selectedIndex: 0
         scroll: {x: 0, y: 0}
       - itemId: 806481549
         selectedIndex: -1
@@ -914,6 +914,39 @@ MonoBehaviour:
       - itemId: -1542029941
         selectedIndex: -1
         scroll: {x: 0, y: 180}
+      - itemId: 575144393
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: -255954003
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 812672411
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: -2062759328
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: -373373286
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 1137687944
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 355971555
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 101209689
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: -859410051
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 697721860
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: -1824404937
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
     m_ManualPathEditMode: 0
   m_ActionAssetManager:
     m_AssetObjectForEditing: {fileID: 0}
@@ -999,7 +1032,7 @@ MonoBehaviour:
       \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
       }\n            ]\n        },\n        {\n            \"name\": \"Scaling\",\n           
       \"id\": \"d1f6fbce-f0b8-48c2-89c9-4edf5ee5f70a\",\n            \"actions\":
-      [\n                {\n                    \"name\": \"Scroll\",\n                   
+      [\n                {\n                    \"name\": \"Scroll Zoom\",\n                   
       \"type\": \"Value\",\n                    \"id\": \"2c725124-01d8-4ee8-839b-b499e511ca49\",\n                   
       \"expectedControlType\": \"Axis\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
@@ -1015,17 +1048,17 @@ MonoBehaviour:
       \"name\": \"1D Vector\",\n                    \"id\": \"214b1c6a-a72e-467d-8c83-68282aaa883b\",\n                   
       \"path\": \"1DAxis\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Scroll\",\n                    \"isComposite\": true,\n                   
+      \"action\": \"Scroll Zoom\",\n                    \"isComposite\": true,\n                   
       \"isPartOfComposite\": false\n                },\n                {\n                   
       \"name\": \"negative\",\n                    \"id\": \"efbdc6c9-71b2-491f-87b4-a80984f5ee8d\",\n                   
       \"path\": \"<Mouse>/scroll/down\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
-      \"action\": \"Scroll\",\n                    \"isComposite\": false,\n                   
+      \"action\": \"Scroll Zoom\",\n                    \"isComposite\": false,\n                   
       \"isPartOfComposite\": true\n                },\n                {\n                   
       \"name\": \"positive\",\n                    \"id\": \"6e4d4947-fda4-48c0-86c4-5f80ab5d0ad5\",\n                   
       \"path\": \"<Mouse>/scroll/up\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
-      \"action\": \"Scroll\",\n                    \"isComposite\": false,\n                   
+      \"action\": \"Scroll Zoom\",\n                    \"isComposite\": false,\n                   
       \"isPartOfComposite\": true\n                },\n                {\n                   
       \"name\": \"Keyboard One Modifier\",\n                    \"id\": \"c9d8e4f4-5553-4fad-ba60-8c5e09401c9e\",\n                   
       \"path\": \"ButtonWithOneModifier\",\n                    \"interactions\":
@@ -1059,66 +1092,127 @@ MonoBehaviour:
       \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
       \"action\": \"Decrease\",\n                    \"isComposite\": false,\n                   
       \"isPartOfComposite\": true\n                }\n            ]\n        },\n       
-      {\n            \"name\": \"Rotation\",\n            \"id\": \"0b7780c9-8ac8-45d0-a30a-c324605f98b7\",\n           
-      \"actions\": [\n                {\n                    \"name\": \"Horizontal
-      Turn\",\n                    \"type\": \"Value\",\n                    \"id\":
-      \"a3df30a5-116d-4f63-bf74-d9306eff5c3a\",\n                    \"expectedControlType\":
-      \"\",\n                    \"processors\": \"\",\n                    \"interactions\":
-      \"\",\n                    \"initialStateCheck\": true\n                },\n               
-      {\n                    \"name\": \"Reset Horizontal Rotation\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"1d07a436-326a-4739-9a9d-f522d25edb70\",\n                   
+      {\n            \"name\": \"Camera Rotation\",\n            \"id\": \"5cfc2556-a475-430e-acb8-5c2edcc88494\",\n           
+      \"actions\": [\n                {\n                    \"name\": \"Rotation2DKeyboard\",\n                   
+      \"type\": \"PassThrough\",\n                    \"id\": \"b79719b3-2f42-46ba-87b8-db6cb5b422dc\",\n                   
+      \"expectedControlType\": \"Vector2\",\n                    \"processors\":
+      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
+      true\n                },\n                {\n                    \"name\":
+      \"Rotation2DMouse\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"e3e8c574-a2f0-4e23-a008-6c9d6e795adb\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
+      },\n                {\n                    \"name\": \"Reset2DRotation\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"dde395af-c071-4a9f-ae2d-a54653212e52\",\n                   
       \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"Vertical Turn\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"5d228aca-192e-4fb7-916d-0953a6f21eb2\",\n                   
-      \"expectedControlType\": \"\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Reset Vertical Rotation\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"37916841-ca3c-4569-8719-be7a85154566\",\n                   
+      },\n                {\n                    \"name\": \"ResetYAxisRotation\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"a0a3db9b-5f85-4c89-8faf-cff37ac51671\",\n                   
+      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
+      },\n                {\n                    \"name\": \"ResetXAxisRotation\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"b56c0675-70ec-4083-a9b9-92b98eae00c8\",\n                   
       \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
       }\n            ],\n            \"bindings\": [\n                {\n                   
-      \"name\": \"1D Axis\",\n                    \"id\": \"9526aa80-c678-44c1-a95a-a82b0d8b2c3e\",\n                   
-      \"path\": \"1DAxis\",\n                    \"interactions\": \"\",\n                   
+      \"name\": \"Axis\",\n                    \"id\": \"4721d415-cd2b-4a20-a477-a294c60fca41\",\n                   
+      \"path\": \"2DVector\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Horizontal Turn\",\n                    \"isComposite\": true,\n                   
+      \"action\": \"Rotation2DKeyboard\",\n                    \"isComposite\": true,\n                   
       \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"negative\",\n                    \"id\": \"ae22c16a-3afb-48d1-a208-9224b85987a3\",\n                   
-      \"path\": \"<Keyboard>/q\",\n                    \"interactions\": \"\",\n                   
+      \"name\": \"up\",\n                    \"id\": \"6f2773ea-681a-40c0-b4b8-5f0e49884607\",\n                   
+      \"path\": \"<Keyboard>/z\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
-      \"action\": \"Horizontal Turn\",\n                    \"isComposite\": false,\n                   
+      \"action\": \"Rotation2DKeyboard\",\n                    \"isComposite\": false,\n                   
       \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"positive\",\n                    \"id\": \"148568a0-1715-4e69-9997-072f7395337a\",\n                   
-      \"path\": \"<Keyboard>/e\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
-      \"action\": \"Horizontal Turn\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"7a10c97a-ae94-484c-82e2-d7a401e18995\",\n                   
-      \"path\": \"<Keyboard>/home\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
-      \"action\": \"Reset Horizontal Rotation\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": false\n                },\n               
-      {\n                    \"name\": \"1D Axis\",\n                    \"id\":
-      \"d886ba49-b2b5-4de9-8fd0-4b9cd182f485\",\n                    \"path\": \"1DAxis\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"\",\n                    \"action\": \"Vertical Turn\",\n                   
-      \"isComposite\": true,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"negative\",\n                   
-      \"id\": \"6fc301b5-3e36-48a5-bf7d-8dc09717e47e\",\n                    \"path\":
-      \"<Keyboard>/z\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
-      \"action\": \"Vertical Turn\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"positive\",\n                    \"id\": \"5faf19bf-3d0a-4edb-8745-976df9a0fa2f\",\n                   
+      \"name\": \"down\",\n                    \"id\": \"0d603162-9fb9-4497-9447-89acdcfa0e2d\",\n                   
       \"path\": \"<Keyboard>/x\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
-      \"action\": \"Vertical Turn\",\n                    \"isComposite\": false,\n                   
+      \"action\": \"Rotation2DKeyboard\",\n                    \"isComposite\": false,\n                   
       \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"ab3a56d2-3295-4336-b48d-5b2df5b981f7\",\n                   
+      \"name\": \"left\",\n                    \"id\": \"b4609eca-85eb-4924-8a06-4739df63bc6c\",\n                   
+      \"path\": \"<Keyboard>/q\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
+      \"action\": \"Rotation2DKeyboard\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": true\n                },\n                {\n                   
+      \"name\": \"right\",\n                    \"id\": \"46b2921f-297a-4ec9-8010-7067ca668972\",\n                   
+      \"path\": \"<Keyboard>/e\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
+      \"action\": \"Rotation2DKeyboard\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": true\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"29ef0b79-c7f0-4ec2-9be8-fe9e660c4805\",\n                   
       \"path\": \"<Keyboard>/home\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
+      \"action\": \"Reset2DRotation\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"One Modifier\",\n                    \"id\": \"f99dd4c9-0733-41f4-9be6-b699a5c87b53\",\n                   
+      \"path\": \"OneModifier\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Reset Vertical Rotation\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": false\n                }\n           
+      \"action\": \"ResetYAxisRotation\",\n                    \"isComposite\": true,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"modifier\",\n                    \"id\": \"7654a91d-e95e-4dd2-8ac9-234ea862e9ec\",\n                   
+      \"path\": \"<Keyboard>/ctrl\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
+      \"action\": \"ResetYAxisRotation\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": true\n                },\n                {\n                   
+      \"name\": \"binding\",\n                    \"id\": \"bdc754d1-9689-4776-83b2-125e00337ddd\",\n                   
+      \"path\": \"<Keyboard>/home\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
+      \"action\": \"ResetYAxisRotation\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": true\n                },\n                {\n                   
+      \"name\": \"One Modifier\",\n                    \"id\": \"ba8ad71e-0a9e-4f87-b93c-1d7f015ea345\",\n                   
+      \"path\": \"OneModifier\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
+      \"action\": \"ResetXAxisRotation\",\n                    \"isComposite\": true,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"modifier\",\n                    \"id\": \"b87becc1-b5ce-4dac-8a3e-3702351ab777\",\n                   
+      \"path\": \"<Keyboard>/alt\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
+      \"action\": \"ResetXAxisRotation\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": true\n                },\n                {\n                   
+      \"name\": \"binding\",\n                    \"id\": \"7d05a3cf-c1b3-46c6-b0af-071f9930803f\",\n                   
+      \"path\": \"<Keyboard>/home\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
+      \"action\": \"ResetXAxisRotation\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": true\n                },\n                {\n                   
+      \"name\": \"One Modifier\",\n                    \"id\": \"d868d4d3-400e-4a23-ada9-2aa135ef000c\",\n                   
+      \"path\": \"OneModifier\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
+      \"action\": \"Rotation2DMouse\",\n                    \"isComposite\": true,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"modifier\",\n                    \"id\": \"16883fc8-4153-4532-bfc6-309d8fad5dcc\",\n                   
+      \"path\": \"<Keyboard>/ctrl\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
+      \"action\": \"Rotation2DMouse\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": true\n                },\n                {\n                   
+      \"name\": \"binding\",\n                    \"id\": \"a79ac42b-2480-427b-b103-7c247e264942\",\n                   
+      \"path\": \"<Mouse>/delta\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"InvertVector2(invertX=false),ScaleVector2(x=0.2,y=0.2)\",\n                   
+      \"groups\": \"Mouse & Keyboard\",\n                    \"action\": \"Rotation2DMouse\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
+      }\n            ]\n        },\n        {\n            \"name\": \"Other\",\n           
+      \"id\": \"b0452ccd-c1cc-42ce-865e-b25f074b912c\",\n            \"actions\":
+      [\n                {\n                    \"name\": \"Camera Inspection Mode\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"9ad96ddf-7744-479d-aa39-3ad926367616\",\n                   
+      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
+      }\n            ],\n            \"bindings\": [\n                {\n                   
+      \"name\": \"One Modifier\",\n                    \"id\": \"45bfa014-c2a5-43f4-8f62-13cdafb3ec14\",\n                   
+      \"path\": \"OneModifier\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
+      \"action\": \"Camera Inspection Mode\",\n                    \"isComposite\":
+      true,\n                    \"isPartOfComposite\": false\n                },\n               
+      {\n                    \"name\": \"modifier\",\n                    \"id\":
+      \"9fc589c4-d13e-4819-833a-c926caa19fe0\",\n                    \"path\": \"<Keyboard>/anyKey\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Mouse & Keyboard\",\n                    \"action\": \"Camera
+      Inspection Mode\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": true\n                },\n                {\n                   
+      \"name\": \"binding\",\n                    \"id\": \"718d7fdc-5486-4b5e-943f-a197ea5ed797\",\n                   
+      \"path\": \"<Keyboard>/ctrl\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Mouse & Keyboard\",\n                   
+      \"action\": \"Camera Inspection Mode\",\n                    \"isComposite\":
+      false,\n                    \"isPartOfComposite\": true\n                }\n           
       ]\n        }\n    ],\n    \"controlSchemes\": [\n        {\n            \"name\":
       \"Mouse & Keyboard\",\n            \"bindingGroup\": \"Mouse & Keyboard\",\n           
       \"devices\": [\n                {\n                    \"devicePath\": \"<Keyboard>\",\n                   
@@ -1168,9 +1262,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 347
+    x: 351
     y: 73
-    width: 1708
+    width: 1760
     height: 820
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -1196,9 +1290,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 347
+    x: 351
     y: 73
-    width: 1708
+    width: 1760
     height: 820
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -1251,9 +1345,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 347
+    x: 351
     y: 73
-    width: 1708
+    width: 1760
     height: 820
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -1357,9 +1451,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 914
-    width: 2056
-    height: 437
+    y: 913
+    width: 2112
+    height: 438
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1385,14 +1479,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/_Project/Scripts/Systems/Player
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Kimicu\Programming\Unity\Projects\Building Village
+  m_LastProjectPath: C:\Kimicu\Programming\Unity\Projects\Village
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 3}
-    m_SelectedIDs: d4600000
-    m_LastClickedID: 24788
-    m_ExpandedIDs: 00000000a0600000a2600000a4600000a6600000a8600000aa600000ac600000ae600000b0600000b2600000b4600000b660000000ca9a3b
+    scrollPos: {x: 0, y: 2}
+    m_SelectedIDs: 16620000
+    m_LastClickedID: 25110
+    m_ExpandedIDs: 00000000d6610000d8610000da610000dc610000de610000e0610000e2610000e4610000e6610000e8610000ea610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1408,7 +1502,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1420,7 +1514,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a0600000a2600000a4600000a6600000a8600000aa600000ac600000ae600000b0600000b2600000b4600000b660000000ca9a3b
+    m_ExpandedIDs: 00000000d6610000d8610000da610000dc610000de610000e0610000e2610000e4610000e6610000e8610000ea610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1445,8 +1539,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 101d0000
+    m_LastClickedInstanceID: 7440
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -1497,9 +1591,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 914
-    width: 2056
-    height: 437
+    y: 913
+    width: 2112
+    height: 438
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1525,16 +1619,16 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 1024
-    width: 1954
-    height: 327
+    y: 914
+    width: 2112
+    height: 437
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 24482
+  m_LastSelectedObjectID: 24914
 --- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1557,7 +1651,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 914
-    width: 2056
+    width: 2112
     height: 437
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -1583,9 +1677,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2057
+    x: 2113
     y: 73
-    width: 502
+    width: 446
     height: 1278
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
