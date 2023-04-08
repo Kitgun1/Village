@@ -9,6 +9,9 @@ namespace _Project.Scripts.Systems.Builder
         [BoxGroup("Dependencies"), LabelText("Building grid"), SerializeField]
         private BuildingGrid _buildingGrid;
 
+        [BoxGroup("Dependencies"), LabelText("Particles confirmation"), SerializeField]
+        private ParticleSystem _confirmParticle;
+
         private Buildings.Building _flyingBuilding;
         private Camera _mainCamera;
         private Input _playerInput;
@@ -55,6 +58,8 @@ namespace _Project.Scripts.Systems.Builder
             _buildingGrid.PlaceTake(_flyingBuilding, _currentGridPosition.x, _currentGridPosition.y);
 
             _flyingBuilding.SetState(ConstructionState.Default);
+             //ParticleSystem confirmParticle = NightPool.Spawn(_confirmParticle, _flyingBuilding.transform, Quaternion.identity);
+            
             _flyingBuilding = null;
             _available = false;
         }
