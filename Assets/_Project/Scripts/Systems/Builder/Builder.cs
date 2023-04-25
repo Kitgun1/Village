@@ -1,4 +1,6 @@
 using _Project.Scripts.Enums;
+using _Project.Scripts.KimicuUtilities.Pool;
+using _Project.Scripts.Systems.Builder.Buildings;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -12,7 +14,7 @@ namespace _Project.Scripts.Systems.Builder
         [BoxGroup("Dependencies"), LabelText("Particles confirmation"), SerializeField]
         private ParticleSystem _confirmParticle;
 
-        private Buildings.Building _flyingBuilding;
+        private Building _flyingBuilding;
         private Camera _mainCamera;
         private Input _playerInput;
 
@@ -43,7 +45,7 @@ namespace _Project.Scripts.Systems.Builder
 
         #region Methods
 
-        public void StartPlacingBuilding(Buildings.Building buildingPrefab)
+        public void StartPlacingBuilding(Building buildingPrefab)
         {
             if (_flyingBuilding != null) Destroy(_flyingBuilding.gameObject);
 
@@ -58,8 +60,10 @@ namespace _Project.Scripts.Systems.Builder
             _buildingGrid.PlaceTake(_flyingBuilding, _currentGridPosition.x, _currentGridPosition.y);
 
             _flyingBuilding.SetState(ConstructionState.Default);
-             //ParticleSystem confirmParticle = NightPool.Spawn(_confirmParticle, _flyingBuilding.transform, Quaternion.identity);
-            
+            ParticleSystem confirmParticle =
+                KiPool.Spawn(_confirmParticle, transform, _flyingBuilding.transform.position, Quaternion.identity);
+
+
             _flyingBuilding = null;
             _available = false;
         }

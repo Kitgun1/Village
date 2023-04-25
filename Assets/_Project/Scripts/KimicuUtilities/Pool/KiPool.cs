@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -48,12 +49,9 @@ namespace _Project.Scripts.KimicuUtilities.Pool
 
         private static Pool GetPool(GameObject prefab)
         {
-            foreach (Pool pool in Pools)
+            foreach (Pool pool in Pools.Where(pool => pool.Prefab == prefab))
             {
-                if (pool.Prefab == prefab)
-                {
-                    return pool;
-                }
+                return pool;
             }
 
             return CreatePool(prefab);
@@ -62,7 +60,10 @@ namespace _Project.Scripts.KimicuUtilities.Pool
         private static Pool CreatePool(GameObject prefab)
         {
             GameObject poolParent = new GameObject($"[KiPool] {prefab.name}");
+
             Pool pool = poolParent.AddComponent<Pool>();
+
+            Debug.Log(poolParent + " --- !!!");
 
             pool.Init(prefab, poolParent.transform);
             Pools.Add(pool);
@@ -76,6 +77,8 @@ namespace _Project.Scripts.KimicuUtilities.Pool
             Pool pool = GetPool(prefab);
             GameObject poolItem = pool.GetFreeGameobject();
 
+            Debug.Log(poolItem);
+            
             poolItem.SetActive(true);
 
             poolItem.transform.SetParent(parent, false);

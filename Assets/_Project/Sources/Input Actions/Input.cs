@@ -40,7 +40,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""name"": ""MoveCursor"",
                     ""type"": ""Value"",
                     ""id"": ""ac845e8e-6a4f-406c-a78a-e66f2457725a"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
